@@ -2,6 +2,7 @@
 const { PORT } = require('./src/constants/constants');
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const  dbConfig  = require('./src/db/dbConfig');
 
 // EXPRESS CONFIG
 const app = express();
@@ -15,7 +16,7 @@ app.use(express.json());
 
 
 // DB CONFIG
-
+dbConfig();
 
 // LISTEN TO PORT
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
