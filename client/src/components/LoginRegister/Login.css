@@ -7,8 +7,29 @@
     justify-content: center;
     display: flex;
     align-items: center;
-
+    padding: 20px;
+    margin: 20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99; /* Adjust the value as needed */
+    /* opacity: 0; Start with 0 opacity */
+    /* animation: slideUp 1s ease forwards; Animation properties */
 }
+
+/* @keyframes slideUp {
+    to {
+        opacity: 1; /* End with full opacity */
+        /* transform: translate(-50%, -50%); Slide up to original position */
+    /* } */
+/* } */ 
+
+
 
 .login-form {
     h1 {
