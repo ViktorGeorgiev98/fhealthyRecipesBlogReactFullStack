@@ -1,20 +1,23 @@
 .logo-image {
     width: 150px;
-    height: 150px;
+    height: 100px;
     overflow: visible;
     z-index: 100;
 }
 
 .nav-bar {
+    z-index: 100;
     /* padding: 2em; */
-    margin: 0px 0px 20px 0px;
+    margin: 0 0 20px 0;
+    padding: 0 0 20px 0;
     width: 100%;
-    border: 3px solid gray;
-    border-radius: 20px;
+    border-bottom: 4px solid black;
+    position: absolute;
+    top: 0;
     display: inline-flex;
     background-color: antiquewhite;
     /* max-height: 150px; */
-    height: 150px;
+    height: 100px;
     
 
     .nav-bar-elements {
@@ -30,18 +33,21 @@
             list-style: none;
             margin: 0px 10px 0px 10px;
             padding: 2px;
-            font-size: 2em;
+            font-size: 25px;
             font-weight: 600;
             color: green;
             font-style: italic;
             text-decoration: underline;
+            padding-right: 20px;
+            padding-right: 20px;
 
             a {
                 color: forestgreen;
             }
 
             a:hover {
-                box-shadow: 0 0 20px black;
+                color: white;
+                background-color: forestgreen;
                 
             }
         }
