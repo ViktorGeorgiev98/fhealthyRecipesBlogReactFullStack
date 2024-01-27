@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      {/* <NavBar /> */}
+      <NavBar />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/login' element={<Login />} />
