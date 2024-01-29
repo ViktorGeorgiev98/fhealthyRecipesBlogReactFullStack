@@ -3,6 +3,7 @@ const { PORT } = require('./src/constants/constants');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const  dbConfig  = require('./src/db/dbConfig');
+const router = require('../server/src/router/router');
 
 // EXPRESS CONFIG
 const app = express();
@@ -12,7 +13,7 @@ app.use(express.json());
 
 
 //  ROUTES
-
+app.use(router);
 
 
 // DB CONFIG
