@@ -2,7 +2,7 @@
     border: 4px solid black;
     border-radius: 20px;
     width: 300px;
-    height: 400px;
+    height: 500px;
     background-color: antiquewhite;
     justify-content: center;
     display: flex;
@@ -18,6 +18,37 @@
 }
 
 .register-form {
+    p {
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        align-content: center;
+    }
+    a { 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* align-content: center; */
+        /* text-align: center; */
+
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 20px;
+        text-decoration: none;
+        border-radius: 20px;
+        border: 2px solid black;
+        width: 150px;
+        height: 35px;
+        background-color: green;
+        color: white;
+        padding: 2px;
+        margin: 2px;
+    }
     h1 {
         font-weight: bold;
         font-style: italic;
