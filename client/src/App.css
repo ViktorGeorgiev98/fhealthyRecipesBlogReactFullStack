@@ -3,3 +3,4 @@
 @import '../src/components/LoginRegister/Login.css';
 @import '../src/components/LoginRegister/Register.css';
 @import '../src/components/ErrorPage/ErrorPage.css';
+@import '../src/components/ErrorHandlerComponent/ErrorHandlerComponent.css';

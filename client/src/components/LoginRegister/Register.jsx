@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { handleError } from "../../context/ErrorHandler";
+import ErrorHandlerComponent from "../ErrorHandlerComponent/ErrorHandlerComponent";
 
 const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
     const navigate = useNavigate();
+    const {error, setError, errorMessage, setErrorMessage} = handleError();
 
     const submitRegisterHandler = async (e) => {
         e.preventDefault();
@@ -28,16 +31,20 @@ const Register = () => {
                 navigate('/login');
             } else {
                 const errorMessage = await response.text();
+                setErrorMessage(errorMessage);
+                setError(true);
                 throw new Error(errorMessage);
             }
         } catch(err) {
             console.log(err.message);
-            return alert(err.message);
+            return;
+           
         }
         
     }
     return (
         <div className="register-page">
+            {error && <ErrorHandlerComponent errorMessage={errorMessage} error={error} setError={setError}/>}
             <form className="register-form" onSubmit={submitRegisterHandler}>
                 <h1>Register</h1>
                 <input name="username" type="text" placeholder="username" onChange={(e) => setUsername(e.currentTarget.value)}/>
