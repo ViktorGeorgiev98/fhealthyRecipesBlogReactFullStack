@@ -9,11 +9,14 @@ export const handleError = () => {
 
 
 export const ErrorHandler = ({ children }) => {
-    const [error, setError] = useState('');
+    const [error, setError] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const errorHandlerValue = {
         error,
         setError,
+        errorMessage,
+        setErrorMessage,
     }
 
     return (
