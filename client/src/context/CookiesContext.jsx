@@ -15,7 +15,7 @@ export const CookiesHandler = ({ children }) => {
     const [cookies, setCookie, removeCookie] = useCookies(['User']);
 
     const setUserCookie = (user) => {
-        setCookie('User', JSON.stringify(user), {path: '/'});
+        setCookie('User', user, {path: '/'});
     }
 
     const removeUserCookie = () => {
