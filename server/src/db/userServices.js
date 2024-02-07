@@ -15,9 +15,15 @@ const userWithThisEmailOrUsernameExists = async (username, email) => {
     }
 }
 
+const findUserByEmail = async(email) => {
+    return await userModel.findOne({email: email});
+}
+
+
 
 
 module.exports = {
     createUser,
     userWithThisEmailOrUsernameExists,
+    findUserByEmail,
 };

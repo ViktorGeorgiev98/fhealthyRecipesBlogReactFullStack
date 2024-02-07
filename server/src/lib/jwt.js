@@ -1,11 +1,11 @@
 const jsonwebtoken = require('jsonwebtoken');
 const { SECRET } = require('../constants/constants');
+const { promisify } = require('util');
 
 const jwt = {
-    sign: async (payload) => {
-        return await jsonwebtoken.sign(payload, process.env.SECRET, { expiresIn: '1d' });
-    },
-    verify: async (token) => {
-        return await jsonwebtoken.verify(token, process.env.SECRET);
-    }
+    sign: promisify(jsonwebtoken.sign),
+    verify: promisify(jsonwebtoken.verify)
 }
+
+
+module.exports = jwt;
