@@ -18,7 +18,7 @@ const Register = () => {
         const password = formData.get('password');
         console.log({username, email, password})
         try {
-            const response = await fetch('http://localhost:3030/user/register', {
+            const response = await fetch('http://localhost:5050/user/register', {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"
