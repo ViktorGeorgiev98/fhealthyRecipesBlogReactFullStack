@@ -7,21 +7,24 @@ import Register from './components/LoginRegister/Register';
 import NavBar from './components/NavBar/NavBar'
 import { Routes, Route } from 'react-router-dom';
 import { ErrorHandler } from './context/ErrorHandler';
+import { CookiesHandler } from './context/CookiesContext';
 
 function App() {
   
 
   return (
     <div className='content'>
-     <ErrorHandler>
-      <NavBar />
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='*' element={<ErrorPage />} />
-        </Routes>
-     </ErrorHandler>
+      <CookiesHandler>
+        <ErrorHandler>
+          <NavBar />
+            <Routes>
+              <Route path='/' element={<HomePage />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/register' element={<Register />} />
+              <Route path='*' element={<ErrorPage />} />
+            </Routes>
+        </ErrorHandler>
+      </CookiesHandler>
     </div>
   )
 }
