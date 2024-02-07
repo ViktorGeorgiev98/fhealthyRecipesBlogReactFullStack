@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { handleError } from "../../context/ErrorHandler";
+import ErrorHandlerComponent from "../ErrorHandlerComponent/ErrorHandlerComponent";
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -14,6 +15,12 @@ const Login = () => {
         const email = formData.get('email');
         const password = formData.get('password');
         try {
+            if (!email || !password) {
+                const errorMessage = "Email and password fields are mandatory!";
+                setErrorMessage(errorMessage);
+                setError(true);
+                throw new Error(errorMessage);
+            }
             const response = await fetch('http://localhost:5050/user/login', {
                 method: 'POST',
                 headers: {
@@ -39,6 +46,7 @@ const Login = () => {
     }
     return (
         <div className="login-page">
+            {error && <ErrorHandlerComponent errorMessage={errorMessage} error={error} setError={setError}/>}
             <form className="login-form" onSubmit={onLoginHandler}>
                 <h1>Login</h1>
                 <input type="text" placeholder="email" onChange={(e) => setEmail(e.currentTarget.value)}/>
